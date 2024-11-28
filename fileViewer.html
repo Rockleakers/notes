@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>File Viewer</title>
+    <style>
+        body {
+            background-color: #e6e6e6;
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        #timer {
+            font-weight: bold;
+            color: #000;
+        }
+
+        #fileContent {
+            white-space: pre-wrap;
+            font-family: monospace;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #f9f9f9;
+            display: none; /* Initially hidden */
+        }
+
+        #pdf-container {
+            text-align: center;
+        }
+
+        .page-wrapper {
+            margin-bottom: 20px;
+            position: relative; /* Set relative positioning for text layer */
+            overflow: hidden; /* Prevent overflow of text layer */
+        }
+
+        canvas {
+            border: 1px solid black;
+        }
+
+        .textLayer {
+            position: absolute; /* Overlay on the canvas */
+            top: 0;
+            left: 0;
+            pointer-events: none; /* Allow clicking through to the canvas */
+        }
+    </style>
+</head>
+
+<body>
+    <p id="timer">Your session will expire in: 00:00:00</p>
+    <button onclick="logout()">Logout</button>
+    <button onclick="copyToClipboard()" id="copyButton">Copy</button>
+
+    <!-- For displaying .java file content -->
+    <pre id="fileContent"></pre>
+
+    <!-- PDF container -->
+    <div id="pdf-container"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script>
+        let pdfDoc = null,
+            scale = 1.5;
+
+        // Check session validity and timer logic
+        function checkSession() {
+            const userName = localStorage.getItem('userName');
+            const sessionExpiry = localStorage.getItem('sessionExpiry');
+            if (userName && sessionExpiry) {
+                if (Date.now() > sessionExpiry) {
+                    clearSession();
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function clearSession() {
+            localStorage.removeItem('userName');
+            localStorage.removeItem('sessionExpiry');
+            location.href = "index.html";
+        }
+
+        function startCountdown() {
+            const sessionExpiry = localStorage.getItem('sessionExpiry');
+            let remainingTime = sessionExpiry - Date.now();
+            countdownInterval = setInterval(() => {
+                remainingTime -= 1000;
+                if (remainingTime <= 0) {
+                    clearInterval(countdownInterval);
+                    clearSession();
+                } else {
+                    const seconds = Math.floor((remainingTime / 1000) % 60);
+                    const minutes = Math.floor((remainingTime / 1000 / 60) % 60);
+                    const hours = Math.floor((remainingTime / 1000 / 3600) % 24);
+                    const formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+                    document.getElementById('timer').textContent = `Your session will expire in: ${formattedTime}`;
+                }
+            }, 1000);
+        }
+
+        function loadFile() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const file = urlParams.get('file');
+            const fileExtension = file.split('.').pop();
+
+            if (fileExtension === 'java') {
+                displayJavaFile(file);
+            } else if (fileExtension === 'pdf') {
+                loadPDF(file);
+            } else {
+                document.getElementById('fileContent').textContent = 'Unsupported file type.';
+            }
+        }
+
+        async function displayJavaFile(file) {
+            try {
+                const response = await fetch(file);
+                if (!response.ok) throw new Error('Error fetching the file.');
+                const content = await response.text();
+                document.getElementById('fileContent').textContent = content;
+                document.getElementById('fileContent').style.display = 'block';
+            } catch (error) {
+                document.getElementById('fileContent').textContent = 'Error loading file: ' + error.message;
+            }
+        }
+
+        function loadPDF(url) {
+            const pdfjsLib = window['pdfjs-dist/build/pdf'];
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js';
+
+            const container = document.getElementById('pdf-container');
+
+            // Load the PDF
+            pdfjsLib.getDocument(url, {enableTextSelection: true}).promise.then(function (pdfDoc) {
+                const numPages = pdfDoc.numPages;
+                for (let pageNum = 1; pageNum <= numPages; pageNum++) {
+                    // Render each page
+                    pdfDoc.getPage(pageNum).then(function (page) {
+                        const viewport = page.getViewport({ scale });
+
+                        // Create a wrapper for each page (canvas + text layer)
+                        const pageWrapper = document.createElement('div');
+                        pageWrapper.className = 'page-wrapper';
+                        pageWrapper.style.width = `${viewport.width}px`;
+                        pageWrapper.style.height = `${viewport.height}px`;
+
+                        // Create the canvas for rendering the page
+                        const canvas = document.createElement('canvas');
+                        canvas.width = viewport.width;
+                        canvas.height = viewport.height;
+                        const context = canvas.getContext('2d');
+
+                        // Add the canvas to the page wrapper
+                        pageWrapper.appendChild(canvas);
+                        container.appendChild(pageWrapper);
+
+                        // Render the page to the canvas
+                        const renderContext = {
+                            canvasContext: context,
+                            viewport: viewport
+                        };
+                        page.render(renderContext).promise.then(function () {
+                            // Draw page number inside the canvas
+                            context.font = 'bold 16px Arial';
+                            context.fillStyle = 'black';
+
+                            // Get the text width to calculate the centered position
+                            const text = `Page ${pageNum} of ${numPages}`;
+                            const textWidth = context.measureText(text).width;
+
+                            // Calculate x position to center the text
+                            const xPosition = (canvas.width - textWidth) / 2;
+
+                            // Draw the page number in the center of the page
+                            context.fillText(text, xPosition, viewport.height - 20); // Adjust Y position as needed
+                        });
+
+                        // Add the text layer for selectable text
+                        const textLayerDiv = document.createElement('div');
+                        textLayerDiv.className = 'textLayer';
+                        textLayerDiv.style.width = `${viewport.width}px`;
+                        textLayerDiv.style.height = `${viewport.height}px`;
+                        textLayerDiv.style.position = 'absolute'; /* Overlay on the canvas */
+                        textLayerDiv.style.top = '0';
+                        textLayerDiv.style.left = '0';
+                        textLayerDiv.style.pointerEvents = 'auto'; /* Enable events for text layer */
+
+                        pageWrapper.appendChild(textLayerDiv);
+
+                        // Render the text layer
+                        page.getTextContent().then(function (textContent) {
+                            pdfjsLib.renderTextLayer({
+                                textContent: textContent,
+                                container: textLayerDiv,
+                                viewport: viewport,
+                                textDivs: [] // Optional: can be left empty
+                            });
+                        });
+                    });
+                }
+            });
+        }
+
+        function copyToClipboard() {
+            const content = document.getElementById('fileContent');
+            const button = document.getElementById('copyButton');
+
+            // Create a selection range to select the content
+            const range = document.createRange();
+            range.selectNodeContents(content);
+            const selection = window.getSelection();
+            selection.removeAllRanges(); // Clear current selection
+            selection.addRange(range); // Select the content
+
+            navigator.clipboard.writeText(content.textContent)
+                .then(() => {
+                    // Change button text to "Copied" and revert after 2 seconds
+                    button.textContent = 'Copied';
+                    setTimeout(() => {
+                        button.textContent = 'Copy Content';
+                    }, 2000); // Revert text after 2 seconds
+                })
+                .catch(err => {
+                    console.error('Error copying text: ', err);
+                });
+        }
+
+        window.onload = function () {
+            if (checkSession()) {
+                startCountdown();
+                loadFile();
+                setInterval(function () {
+                    if (!checkSession()) {
+                        clearSession();
+                    }
+                }, 10000);
+            } else {
+                clearSession();
+            }
+        };
+
+        function logout() {
+            clearSession();
+        }
+    </script>
+</body>
+
+</html>

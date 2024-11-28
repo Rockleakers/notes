@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+       #timer {
+        font-weight: bold;
+        color: #000;
+    }
+
+    table,
+    th,
+    td {
+        border-bottom: 1px solid #fff;
+        border-collapse: collapse;
+        text-align: center;
+    }
+
+    table {
+        width: 100%;
+        background: linear-gradient(rgba(4, 9, 30, 0.7),
+                rgba(4, 9, 30, 0.7)),
+            url('./image/java-bg.png');
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+    th {
+        background-color: black;
+        color: white;
+    }
+
+    td {
+        color: #fff;
+        /* background-color: rgba(211, 111, 33, .3 ); */
+    }
+
+    td:hover {
+        background-color: #f00;
+    }
+
+    a {
+        color: #fff;
+    }
+
+    tfoot {
+        background-color: #062244;
+    }
+    </style>
+</head>
+
+<body>
+    <p id="timer">Your session will expire in: 00:00:00</p> <!-- Timer display -->
+    <button onclick="logout()">Logout</button>
+    <button><a href="auth.html" style="color: #000;text-decoration: none;">Lab practical page</a></button>
+    <h1>Semester Notes</h1>
+
+    <table width="100%">
+        <caption>Cryptography Principles and Techniques</caption>
+        <thead>
+            <tr>
+                <th>UNIT NO</th>
+                <th>TITILE</th>
+                <th>LINK</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Introduction to Cryptography & Number Theory</td>
+                <td><a href=".\cpt1.pdf">cpt1.pdf</a></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Symmetric Key Cryptography</td>
+                <td><a href=".\cpt2.pdf">cpt2.pdf</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <table width="100%">
+        <caption>Data Visualization and Techniques</caption>
+        <thead>
+            <tr>
+                <th>Unit. No</th>
+                <th>Title</th>
+                <th>Link</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td rowspan="2">1</td>
+                <td rowspan="2">Introduction To Data Visualization</td>
+                <td><a href=".\dvt1a.pdf">dvt1a.pdf</a></td>
+            </tr>
+            <tr>
+                <td><a href=".\dvt1b.pdf">dvt1b.pdf</a></td>
+            </tr>
+            <tr>
+                <td rowspan="2">2</td>
+                <td rowspan="2">Handling Data</td>
+                <td><a href=".\dvt2a.pdf">dvt2a.pdf</a></td>
+            </tr>
+            <tr>
+                <td><a href=".\dvt2b.pdf">dvt2b.pdf</a></td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table>
+        <caption>Java Programming</caption>
+        <thead>
+            <tr>
+                <th>Unit. No</th>
+                <th>Title</th>
+                <th>Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>MODULE - I</td>
+                <td><a href=".\jp1.pdf">jp1.pdf</a></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>MODULE - II</td>
+                <td><a href=".\jp2.pdf">jp2.pdf</a></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>MODULE - III</td>
+                <td><a href=".\jp3.pdf">jp3.pdf</a></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>MODULE - IV</td>
+                <td><a href=".\jp4.pdf">jp4.pdf</a></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>MODULE - V</td>
+                <td><a href=".\jp5.pdf">jp5.pdf</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <caption>Network and Communication</caption>
+        <thead>
+            <tr>
+                <th>Unit. No</th>
+                <th>Title</th>
+                <th>Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Introduction and Physical Layer</td>
+                <td><a href=".\nc1.pdf">nc1.pdf</a></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Logical Link Control : Error Detection and Error Correction</td>
+                <td><a href=".\nc2.pdf">nc2.pdf</a></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Network Layer</td>
+                <td><a href=".\nc3.pdf">nc3.pdf</a></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Transfer Layer</td>
+                <td><a href=".\nc4.pdf">nc4.pdf</a></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Application Layer</td>
+                <td><a href=".\nc5.pdf">nc5.pdf</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <caption>Road Safety</caption>
+        <thead>
+            <tr>
+                <th>Unit. No</th>
+                <th>Title</th>
+                <th>Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Nature Of Road Safety</td>
+                <td><a href=".\rs1.pdf">rs1.pdf</a></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Institutional setting of Road safety</td>
+                <td><a href=".\rs2.pdf">rs2.pdf</a></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Origins , Characteristics and uses of crash data</td>
+                <td><a href=".\rs3.pdf">rs3.pdf</a></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Contributing Crash Factors , Countermeasure Selection ,and Evaluation</td>
+                <td><a href=".\rs4.pdf">rs4.pdf</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+
+        let countdownInterval; // Variable to hold the countdown interval
+
+        // Function to check if the session is valid
+        function checkSession() {
+            const userName = localStorage.getItem('userName');
+            const sessionExpiry = localStorage.getItem('sessionExpiry');
+
+            // If session exists
+            if (userName && sessionExpiry) {
+                // Check if the session has expired
+                if (Date.now() > sessionExpiry) {
+                    console.log('Session expired. Redirecting to login.');
+                    clearSession();
+                    return false; // Session is not valid
+                } else {
+                    console.log('Session is valid for user:', userName);
+                    return true; // Session is valid
+                }
+            }
+            console.log('No session found. Redirecting to login.');
+            return false; // No session found
+        }
+
+        // Function to clear session data
+        function clearSession() {
+            localStorage.removeItem('userName');
+            localStorage.removeItem('sessionExpiry');
+            location.href = "index.html"; // Redirect to the login page
+        }
+
+        // Function to display the welcome message
+        function displayWelcomeMessage() {
+            const userName = localStorage.getItem('userName');
+            console.log('Welcome, ' + userName);
+            // if (userName) {
+            //     document.getElementById('welcome-message').textContent = "Welcome, " + userName + "!";
+            // }
+        }
+
+        // Function to start the countdown timer
+        function startCountdown() {
+            const sessionExpiry = localStorage.getItem('sessionExpiry');
+
+            // Update the timer every second
+            countdownInterval = setInterval(() => {
+                let remainingTime = sessionExpiry - Date.now(); // Calculate remaining time
+                // remainingTime -= 1000; // Decrease by 1 second
+
+                if (remainingTime <= 0) {
+                    clearInterval(countdownInterval); // Clear the interval
+                    clearSession(); // Redirect if the time is up
+                } else {
+                    const seconds = Math.floor((remainingTime / 1000) % 60);
+                    const minutes = Math.floor((remainingTime / 1000 / 60) % 60);
+                    const hours = Math.floor((remainingTime / 1000 / 3600) % 24);
+                    const formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+                    document.getElementById('timer').textContent = `Your session will expire in: ${formattedTime}`;
+                }
+            }, 1000); // Update every second
+        }
+
+        // Check the session immediately on page load
+        window.onload = function () {
+            if (checkSession()) {
+                displayWelcomeMessage(); // Show welcome message only if session is valid
+                startCountdown(); // Start the countdown timer
+                // Set up an interval to check the session every 5 seconds
+                setInterval(function () {
+                    if (!checkSession()) {
+                        clearSession(); // Redirect if session is invalid
+                    }
+                }, 10000);
+                // Check every 10000 milliseconds (10 seconds)
+            } else {
+                clearSession(); // Redirect if session is invalid
+            }
+        };
+
+        function logout() {
+            clearSession(); // Use the clearSession function for logout
+        }
+    </script>
+</body>
+
+</html>
