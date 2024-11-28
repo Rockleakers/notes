@@ -1,21 +1,3 @@
-function f1() {}
-function f2() {
-  return 1;
-}
-function f3() {
-  var i = 0;
-  throw "test";
-}
-function f4() {
-  var i = 0;
-}
-var obj = {
-  method1() {},
-  method2() {}
-};
-class C {
-  method1() {}
-  method2() {}
-}
-var arrow1 = () => {};
-var arrow2 = () => {};
+version https://git-lfs.github.com/spec/v1
+oid sha256:6e34cc7cdfa75e8beeb119208047adfa0d56c5d9a25da6e6b898d379a4c3de40
+size 259

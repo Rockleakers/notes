@@ -1,12 +1,3 @@
-var a = typeof PDFJSDev === 'undefined';
-var b = typeof PDFJSDev !== 'undefined';
-var c = PDFJSDev.test('TRUE');
-var d = PDFJSDev.test('FALSE');
-var e = PDFJSDev.eval('TRUE');
-var f = PDFJSDev.eval('TEXT');
-var g = PDFJSDev.eval('OBJ');
-var h = PDFJSDev.json('$ROOT/external/builder/fixtures_babel/evals.json');
-var i = typeof PDFJSDev === 'undefined' ? PDFJSDev.eval('FALSE') : '0';
-var j = typeof PDFJSDev !== 'undefined' ? PDFJSDev.eval('OBJ.obj') : '0';
-var k = !PDFJSDev.test('TRUE');
-var l = !PDFJSDev.test('FALSE');
+version https://git-lfs.github.com/spec/v1
+oid sha256:dea77b338e129136b73eb35b241d775ab5d5b0b85de350589f0390f1934588b6
+size 523

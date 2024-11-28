@@ -1,24 +1,3 @@
-/* Copyright 2020 Mozilla Foundation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-class PDFObject {
-  constructor(data) {
-    this._expandos = Object.create(null);
-    this._send = data.send || null;
-    this._id = data.id || null;
-  }
-}
-
-export { PDFObject };
+version https://git-lfs.github.com/spec/v1
+oid sha256:aef78c9f548a2ea054362fadae2b0799acadd0e5ab4a416d9e775586bf2d3da4
+size 779

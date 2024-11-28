@@ -1,15 +1,3 @@
-var a = true;
-var b = false;
-var c = true && '1';
-var d = false && '0';
-var e = true || '1';
-var f = false || '0';
-var g = true ? '1' : '0';
-var h = false ? '1' : '0';
-var i = 'test' === 'test';
-var j = 'test' !== 'test';
-var k = 'test' === 'test2';
-var l = 'test' !== 'test2';
-var m = '1' === true;
-var n = !true;
-var o = !false;
+version https://git-lfs.github.com/spec/v1
+oid sha256:36cd755f69e446604116e046e8d5c57c5b043a16a9c7f26760c5bf717f0cbf02
+size 331

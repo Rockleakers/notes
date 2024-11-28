@@ -1,21 +1,3 @@
-var a = false;
-var b = true;
-var c = true;
-var d = false;
-var e = true;
-var f = "text";
-var g = {
-  obj: {
-    i: 1
-  },
-  j: 2
-};
-var h = {
-  test: "test"
-};
-var i = '0';
-var j = {
-  i: 1
-};
-var k = false;
-var l = true;
+version https://git-lfs.github.com/spec/v1
+oid sha256:1b75bbacd5a701048d3050de27480ec3d4396176b4302c5df66b536eff2882be
+size 221

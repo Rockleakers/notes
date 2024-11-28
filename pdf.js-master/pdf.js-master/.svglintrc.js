@@ -1,21 +1,3 @@
-export default {
-  rules: {
-    valid: true,
-
-    custom: [
-      (reporter, $, ast, { filename }) => {
-        reporter.name = "no-svg-fill-context-fill";
-
-        const svg = $.find("svg");
-        const fill = svg.attr("fill");
-        if (fill === "context-fill") {
-          reporter.error(
-            "Fill attribute on svg element must not be set to 'context-fill'",
-            svg[0],
-            ast
-          );
-        }
-      },
-    ],
-  },
-};
+version https://git-lfs.github.com/spec/v1
+oid sha256:bea53d356294d35fe9df862c57e71208a03ddc3e9ee6a3355177cc3f8e9bea84
+size 458

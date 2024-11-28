@@ -1,34 +1,3 @@
-if ('test') {
-  "1";
-}
-if (true) {
-  "1";
-}
-if (true) {
-  "1";
-} else {
-  "2";
-}
-if (false) {
-  "1";
-}
-if (false) {
-  "1";
-} else {
-  "2";
-}
-if (true && false) {
-  "1";
-}
-if (true && false || '1') {
-  "1";
-}
-
-function f1() {
-  if (true) {
-    "1";
-  }
-  if (false) {
-    "2";
-  }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:f7ff4857de5cad769d7b88e041880befef78bac3d47967fd5ced4cb24dccbc23
+size 282

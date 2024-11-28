@@ -1,18 +1,3 @@
-/* eslint-disable import/no-commonjs */
-
-const webpack = require("webpack"); // eslint-disable-line no-unused-vars
-const path = require("path");
-
-module.exports = {
-  context: __dirname,
-  entry: {
-    main: "./main.mjs",
-    "pdf.worker": "pdfjs-dist/build/pdf.worker.mjs",
-  },
-  mode: "none",
-  output: {
-    path: path.join(__dirname, "../../build/webpack"),
-    publicPath: "../../build/webpack/",
-    filename: "[name].bundle.js",
-  },
-};
+version https://git-lfs.github.com/spec/v1
+oid sha256:7f30e7e73f899ae8498f56b75619cd095a173ba4b485d19b611e321e5ed71ecd
+size 445

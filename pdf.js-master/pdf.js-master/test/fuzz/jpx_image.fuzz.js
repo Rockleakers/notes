@@ -1,33 +1,3 @@
-import {
-  JpxError,
-  JpxImage,
-  setVerbosityLevel,
-  VerbosityLevel,
-} from "../../build/image_decoders/pdf.image_decoders.mjs";
-
-// Avoid unnecessary console "spam", by ignoring `info`/`warn` calls.
-setVerbosityLevel(VerbosityLevel.ERRORS);
-
-const ignored = ["Cannot read properties"];
-
-function ignoredError(error) {
-  if (error instanceof JpxError) {
-    return true;
-  }
-  return ignored.some(message => error.message.includes(message));
-}
-
-/**
- * @param {Buffer} data
- */
-function fuzz(data) {
-  try {
-    JpxImage.decode(new Uint8Array(data));
-  } catch (error) {
-    if (error.message && !ignoredError(error)) {
-      throw error;
-    }
-  }
-}
-
-export { fuzz };
+version https://git-lfs.github.com/spec/v1
+oid sha256:305148752cf760040234086d580d1cf9aa04a5b01b145f0a9ffb54de96e82af9
+size 671
