@@ -108,8 +108,8 @@
             const file = urlParams.get('file');
             const fileExtension = file.split('.').pop();
 
-            if (fileExtension === 'java') {
-                displayJavaFile(file);
+            if (fileExtension === 'java' || fileExtension === 'html') {
+                displayFile(file);
             } else if (fileExtension === 'pdf') {
                 loadPDF(file);
             } else {
@@ -117,7 +117,7 @@
             }
         }
 
-        async function displayJavaFile(file) {
+        async function displayFile(file) {
             try {
                 const response = await fetch(file);
                 if (!response.ok) throw new Error('Error fetching the file.');
