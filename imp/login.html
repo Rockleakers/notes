@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form id="login-form">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" placeholder="Enter username" required pattern="[a-zA-Z]+">
+                <span id="username-error"></span>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" placeholder="Enter password" required minlength="6">
+                <span id="password-error"></span>
+            </div>
+            <button type="submit" class="login-btn" id="login-btn">Login</button>
+            <a href="regform.html">
+                <button class="register-btn" id="register-btn" ">Register </button> 
+        </a> 
+        </form> 
+    </div> 
+    <script src=" script.js"></script>
+</body>
+
+</html>

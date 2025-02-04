@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Access</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function setSessionWithExpiration(username, expirationMinutes) {
+        const expirationTime = Date.now() + (expirationMinutes * 60 * 1000); // Expiry time in milliseconds
+        localStorage.setItem('userName', username); // Store the username
+        localStorage.setItem('sessionExpiry', expirationTime); // Store the session expiration time
+        console.log("Session set for user:", username, "Expires at:", new Date(expirationTime).toLocaleString());
+    }
+    setSessionWithExpiration("admin", 10 * 60); // Set session for 10 minutes
+    location.href = "/auth.html"; // Redirect after successful login
+</script>
+
+</html>

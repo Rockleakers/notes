@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --border-radi: 8px;
+}
+
+::selection {
+    background-color: #9fef00;
+    color: #000;
+    font-style: italic;
+}
+
+::-moz-selection {
+    background-color: #9fef00;
+    color: #000;
+    font-style: italic;
+}
+
+body {
+    min-height: 100svh;
+    background-color: #0b121f;
+    font-family: sans-serif;
+    max-width: 1180px;
+    padding: 12px;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: left;
+}
+
+#timer {
+    font-weight: bold;
+    color: #fff;
+    padding: 2% 0;
+}
+
+.btn {
+    min-width: 128px;
+    display: inline-block;
+    text-align: center;
+    margin: 0 12px 12px 0;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.btn-green-filled {
+    transition: .3s all ease;
+    color: #141d2b;
+    background-color: #9fef00;
+}
+
+.btn-green-filled:hover {
+    background-color: #bbff34;
+    color: #000;
+}
+
+.btn-grey-filled {
+    transition: .3s all ease;
+    color: #a4b1cd !important;
+    background-color: #202837;
+    border: 1px solid #1a2332;
+}
+
+.btn-grey-filled:hover {
+    transition: .3s all ease;
+    color: #000 !important;
+    background-color: #a4b1cd;
+    border: 1px solid #a4b1cd;
+}
+
+table,
+th,
+td {
+    /* border-collapse: collapse; */
+    text-align: center;
+}
+
+table {
+    background-color: #141d2b !important;
+    border-radius: var(--border-radi);
+}
+
+thead {
+    border-radius: var(--border-radi);
+}
+
+th,
+td {
+    /* border-collapse: collapse; */
+    padding: 12px;
+    border: 1px solid #202837;
+}
+
+th:first-child {
+
+    border-radius: var(--border-radi) 0 0 0;
+}
+
+th:last-child {
+    border-radius: 0 var(--border-radi) 0 0;
+}
+
+/* table,
+th,
+td {
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+} */
+
+th {
+    color: #fff;
+}
+
+td {
+    color: #a4b1cd;
+}
+
+/* td:hover {
+    background-color: #f00;
+} */
+caption {
+    color: #fff;
+    font-size: 24px;
+    margin: 12px 0;
+}
+
+a {
+    color: #fff;
+}
+
+/* tr:last-child {
+    border-radius: 0 0 var(--border-radi) var(--border-radi));
+} */
+
+tfoot>tr:last-child>td:last-child {
+    border-radius: 0 0 var(--border-radi) 0;
+}
+
+tfoot>tr:first-child>td:first-child {
+    border-radius: 0 0 0 var(--border-radi);
+}

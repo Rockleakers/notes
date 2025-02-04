@@ -1,0 +1,58 @@
+<CATALOG> 
+<CD> 
+<TITLE>The Complete Reference JAVA</TITLE> 
+<AUTHOR>Herbert Schildt</AUTHOR> 
+<PRICE>10.90</PRICE> 
+</CD> 
+<CD> 
+<TITLE>Algorithms to Live By</TITLE> 
+<AUTHOR>Brian Christian</AUTHOR> 
+<PRICE>9.90</PRICE> 
+</CD> 
+<CD> 
+<TITLE>Structure and Interpretation of Computer Programs</TITLE> 
+<AUTHOR>Gerald Jay Sussman</AUTHOR> 
+<PRICE>9.90</PRICE> 
+</CD> 
+<CD> 
+<TITLE>Clean Code: A Handbook of Agile Software</TITLE> 
+<AUTHOR>Robert C. Martin</AUTHOR> 
+<PRICE>10.20</PRICE> 
+</CD> 
+<CD> 
+<TITLE>Code Complete: A Practical Handbook of Software Construction</TITLE> 
+<AUTHOR>Thomas. H. Cormen</AUTHOR> 
+<PRICE>9.90</PRICE> 
+</CD> 
+<CD> 
+<TITLE>Introduction to Algorithm</TITLE> 
+<AUTHOR>Bee Gees</AUTHOR> 
+<PRICE>10.90</PRICE> 
+</CD> 
+<CD> 
+<TITLE>The C Programming Language</TITLE> 
+<AUTHOR>Brian W. Kernighan</AUTHOR> 
+<PRICE>8.10</PRICE> 
+</CD> 
+<CD> 
+<TITLE>The Soul of a New Machine </TITLE> 
+<AUTHOR>Tracy Kidder</AUTHOR> 
+<PRICE>8.50</PRICE> 
+</CD> 
+<CD> 
+<TITLE>Design Patterns: Elements of Reusable objects Or iented Software </TITLE> 
+<AUTHOR>Erich Gamma, John Vlissides, Richard Helm</AUTHOR> 
+<PRICE>10.80</PRICE> 
+</CD> 
+<CD> 
+<TITLE>The Computer Networking: A Top-Down Approach</TITLE> 
+<AUTHOR>James F. Kurose and Keith W. Ross</AUTHOR> 
+<PRICE>8.70</PRICE> 
+</CD> 
+<CD> 
+<TITLE>The Artificial Intelligence: A Modern Approach</TITLE> 
+ 
+<AUTHOR>Stuart Russell</AUTHOR> 
+<PRICE>10.90</PRICE> 
+</CD> 
+</CATALOG>

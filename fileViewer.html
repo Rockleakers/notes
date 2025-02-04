@@ -2,27 +2,31 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="style.css">
     <title>File Viewer</title>
     <style>
-        body {
+        /* body {
             background-color: #e6e6e6;
             margin: 0;
             padding: 20px;
             font-family: Arial, sans-serif;
-        }
-
+        } */
+        /* 
         #timer {
             font-weight: bold;
             color: #000;
-        }
+        } */
 
         #fileContent {
             white-space: pre-wrap;
             font-family: monospace;
-            border: 1px solid #ccc;
+            border: 1px solid #202837;
             padding: 10px;
-            background-color: #f9f9f9;
-            display: none; /* Initially hidden */
+            border-radius: 12px;
+            color: #a4b1cd;
+            background-color: #141d2b !important;
+            display: none;
+            /* Initially hidden */
         }
 
         #pdf-container {
@@ -31,8 +35,10 @@
 
         .page-wrapper {
             margin-bottom: 20px;
-            position: relative; /* Set relative positioning for text layer */
-            overflow: hidden; /* Prevent overflow of text layer */
+            position: relative;
+            /* Set relative positioning for text layer */
+            overflow: hidden;
+            /* Prevent overflow of text layer */
         }
 
         canvas {
@@ -40,18 +46,22 @@
         }
 
         .textLayer {
-            position: absolute; /* Overlay on the canvas */
+            position: absolute;
+            /* Overlay on the canvas */
             top: 0;
             left: 0;
-            pointer-events: none; /* Allow clicking through to the canvas */
+            pointer-events: none;
+            /* Allow clicking through to the canvas */
         }
+
+
     </style>
 </head>
 
 <body>
     <p id="timer">Your session will expire in: 00:00:00</p>
-    <button onclick="logout()">Logout</button>
-    <button onclick="copyToClipboard()" id="copyButton">Copy</button>
+    <div class="btn btn-green-filled" onclick="logout()">Logout</div>
+    <div class="btn btn-grey-filled" onclick="copyToClipboard()" id="copyButton">Copy</div>
 
     <!-- For displaying .java file content -->
     <pre id="fileContent"></pre>
@@ -136,7 +146,7 @@
             const container = document.getElementById('pdf-container');
 
             // Load the PDF
-            pdfjsLib.getDocument(url, {enableTextSelection: true}).promise.then(function (pdfDoc) {
+            pdfjsLib.getDocument(url, { enableTextSelection: true }).promise.then(function (pdfDoc) {
                 const numPages = pdfDoc.numPages;
                 for (let pageNum = 1; pageNum <= numPages; pageNum++) {
                     // Render each page

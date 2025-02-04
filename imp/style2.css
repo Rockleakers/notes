@@ -1,0 +1,57 @@
+body { 
+    background-image: url("rr.jpg"); 
+    background-attachment: fixed; 
+    background-position: center center; /* Centers the image */ 
+    background-repeat: no-repeat; /* Prevents tiling of the image */ 
+    background-size: cover; /* Ensures the image covers the entire background */ 
+    margin: 0; 
+    font-family: Arial, sans-serif; 
+} 
+ 
+h1 { 
+    text-align: center; 
+    background: rgb(199, 195, 107); 
+    font-family: 'Georgia', Times, serif; 
+    color: aliceblue; 
+    padding: 20px; 
+    margin: 20px 0; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+    transition: background 0.3s, transform 0.3s; 
+} 
+ 
+h1:hover { 
+    background: rgb(179, 169, 90); 
+    transform: scale(1.05); 
+} 
+ 
+h3 { 
+    text-align: left; 
+    font-family: Arial, sans-serif; 
+    color: aliceblue; 
+    padding: 10px 20px; 
+    background: rgba(0, 0, 0, 0.5); 
+    border-radius: 5px; 
+    margin: 20px 0; 
+} 
+ 
+ol { 
+    list-style-type: decimal; 
+    margin: 0; 
+    padding: 20px; 
+    background: rgba(75, 18, 180, 0.8); 
+    border: 2px solid #ddd; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+} 
+ 
+ol li { 
+    padding: 10px; 
+    margin-bottom: 10px; 
+    font-size: 1.1em; 
+    transition: background-color 0.3s, color 0.3s; 
+} 
+ol li:hover { 
+    background-color: rgba(0, 0, 0, 0.1); 
+    color: #007BFF; 
+} 

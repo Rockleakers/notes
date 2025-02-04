@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Registration Form</h1>
+        <form id="registration-form">
+            <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" placeholder="Enter first name" required pattern="[a-zA-Z]+">
+                <span id="firstName-error"></span>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" placeholder="Enter last name" required pattern="[a-zA-Z]+">
+                <span id="lastName-error"></span>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Enter email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+                <span id="email-error"></span>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" required>
+            </div>
+            <div class="form-group">
+                <label for="mobileNumber">Mobile Number:</label>
+                <input type="tel" id="mobileNumber" placeholder="Enter mobile number" required pattern="[0-9]{10}">
+                <span id="mobileNumber-error"></span>
+            </div>
+            <div class="form-group">
+                <label for="countryCode">Country Code:</label>
+                <select id="countryCode" required>
+                    <option value="">Select</option>
+                    <option value="+1">USA (+1)</option>
+                    <option value="+91">India (+91)</option>
+                    <option value="+44">UK (+44)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" placeholder="Enter password" required minlength="6">
+
+                <span id="password-error"></span>
+            </div>
+            <button type="submit" class="register-btn">Register</button>
+        </form>
+    </div>
+    <script src="script1.js"></script>
+</body>
+
+</html>

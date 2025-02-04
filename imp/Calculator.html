@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.min.js" integrity="sha512-
+iphNRh6dPbeuPGIrQbCdbBF/qcqadKWLa35YPVfMZMHBSI6PLJh1om2xCTWhpVpmUyb4IvVS9iYnnYMkleVXLA=
+=" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 15px;
+            font-size: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        input[type="button"] {
+            width: 70px;
+            height: 70px;
+            margin: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td colspan="4">
+                <input type="text" id="answer" placeholder="0" readonly>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="button" value="AC" onclick="clearInput()"></td>
+            <td><input type="button" value="(" onclick="addValue('(')"></td>
+            <td><input type="button" value=")" onclick="addValue(')')"></td>
+            <td><input type="button" value="/" onclick="addValue('/')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="addValue('7')"></td>
+            <td><input type="button" value="8" onclick="addValue('8')"></td>
+            <td><input type="button" value="9" onclick="addValue('9')"></td>
+            <td><input type="button" value="*" onclick="addValue('*')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="addValue('4')"></td>
+            <td><input type="button" value="5" onclick="addValue('5')"></td>
+            <td><input type="button" value="6" onclick="addValue('6')"></td>
+            <td><input type="button" value="-" onclick="addValue('-')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" onclick="addValue('1')"></td>
+            <td><input type="button" value="2" onclick="addValue('2')"></td>
+            <td><input type="button" value="3" onclick="addValue('3')"></td>
+            <td><input type="button" value="+" onclick="addValue('+')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="0" onclick="addValue('0')"></td>
+            <td><input type="button" value="." onclick="addValue('.')"></td>
+            <td><input type="button" value="Backspace" onclick="backspace()"></td>
+            <td><input type="button" value="=" onclick="calculate()"></td>
+        </tr>
+    </table>
+
+    <script>
+        function addValue(val) {
+            document.getElementById("answer").value += val;
+        }
+        function backspace() {
+            let currentValue = document.getElementById("answer").value;
+            document.getElementById("answer").value = currentValue.slice(0, -1);
+        }
+
+        function clearInput() {
+            document.getElementById("answer").value = "";
+        }
+        function calculate() {
+            let expression = document.getElementById("answer").value;
+            if (expression.trim() === "") {
+                document.getElementById("answer").value = "Error: Empty Input";
+
+                return;
+            }
+            try {
+                let result = math.evaluate(expression);
+                document.getElementById("answer").value = result;
+            } catch (error) {
+                document.getElementById("answer").value = "Error";
+            }
+        } 
+    </script>
+</body>
+
+</html>

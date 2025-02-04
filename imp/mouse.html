@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mouse Events</title>
+    <script>
+        function myFunction() {
+            document.getElementById("demo").innerHTML = "This is the Output of ondblclick Mouse Event";
+            document.getElementById("demo").style.color = "red";
+            document.getElementById("demo").style.fontWeight = 'bold';
+        }
+
+        function keyFunction() {
+            document.getElementById("keyDemo").innerHTML = "A key was pressed!";
+        }
+
+        function resizeFunction() {
+            document.body.style.backgroundColor = "lightgreen";
+        } 
+    </script>
+</head>
+
+<body onresize="resizeFunction()">
+    <center>
+        <h2>Select the Background Color</h2>
+        <button onclick="document.body.style.backgroundColor='violet'">Violet</button>
+        <button onclick="document.body.style.backgroundColor='yellow'">Yellow</button>
+        <button onclick="document.body.style.backgroundColor='skyblue'">Skyblue</button>
+        <button onclick="document.body.style.backgroundColor='white'">White</button>
+
+        <br><br>
+        <span onmouseover="style.color='red';style.fontWeight = 'bold'"
+            onmouseout="style.color='black';style.fontWeight = 'normal'">
+            Mouse over this text
+        </span>
+        <p ondblclick="myFunction()">Double click on this paragraph line to trigger a ondblclick Mouse
+            Event</p>
+        <p id="demo"></p>
+        <p onmousedown="this.style.color='blue'; this.style.fontWeight='bold';"
+            onmouseup="this.style.color='black'; this.style.fontWeight='normal';">
+            Hold down the mouse button on this text
+        </p>
+        <p id="keyDemo"></p>
+        <input type="text" onkeydown="keyFunction()" placeholder="Press any key">
+    </center>
+</body>
+
+</html>
