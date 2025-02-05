@@ -118,13 +118,15 @@
             const file = urlParams.get('file');
             const fileExtension = file.split('.').pop();
 
-            if (fileExtension === 'java' || fileExtension === 'html') {
+            displayFile(file)
+
+            /* if (fileExtension === 'java' || fileExtension === 'html') {
                 displayFile(file);
             } else if (fileExtension === 'pdf') {
                 loadPDF(file);
             } else {
                 document.getElementById('fileContent').textContent = 'Unsupported file type.';
-            }
+            } */
         }
 
         async function displayFile(file) {
