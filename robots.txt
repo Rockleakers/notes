@@ -1,0 +1,18 @@
+User-agent: Googlebot
+Disallow: /nogooglebot/
+Disallow: /jp/
+Disallow: /nc/
+Disallow: /admin/
+Disallow: /pdfjs/
+Disallow: /*.pdf$
+
+User-agent: *
+Allow: /
+Disallow: /jp/
+Disallow: /nc/
+Disallow: /admin/
+Disallow: /pdfjs/
+Disallow: /.vscode/
+Disallow: /*.pdf$
+
+Sitemap: https://rockleaks.netlify.app/sitemap.xml
