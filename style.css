@@ -126,7 +126,7 @@ td {
 td>img {
     object-fit: contain;
     height: fit-content;
-    width: auto;
+    width: fit-content;
 }
 
 /* td:hover {
