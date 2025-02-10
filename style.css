@@ -123,6 +123,11 @@ th {
 td {
     color: #a4b1cd;
 }
+td>img {
+    object-fit: contain;
+    height: fit-content;
+    width: auto;
+}
 
 /* td:hover {
     background-color: #f00;
