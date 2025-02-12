@@ -8,109 +8,115 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TJPDZLLRB7"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          
-            gtag('config', 'G-TJPDZLLRB7');
-            </script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-TJPDZLLRB7');
+    </script>
+    <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
-<title>Semster Notes</title>
-
-
-
-
-
+    <title>Semster Notes</title>
 </head>
 
 <body>
     <p id="timer">Your session will expire in: 00:00:00</p> <!-- Timer display -->
     <div class="btn btn-green-filled" onclick="logout()">Logout</div>
-    <div style="display: inline-block;"><a href="auth.html" class="btn btn-grey-filled"
-            style="color: #000;text-decoration: none;">Lab practical page</a></div>
+    <!-- <div style="display: inline-block;">
+        <a href="auth.html" class="btn btn-grey-filled" style="color: #000;text-decoration: none;">Lab practical page</a>
+    </div> -->
     <h1 style="color: #fff;">Semester Notes</h1>
 
     <center>
         <table width="100%" cellspacing="0">
-            <caption>Security and Risk Management</caption>
+            <caption>Cyber Security</caption>
             <thead>
                 <tr>
-                    <th width="33.3%">UNIT NO.</th>
-                    <th width="33.3%">TITLE</th>
-                    <th width="33.3%">LINK</th>
+                    <th width="33.3%">SEM</th>
+                    <th width="33.3%">LAB</th>
+                    <th width="33.3%">NOTES</th>
                 </tr>
             </thead>
+            <tbody>
+                <tr>
+                    <td>5<sup>th</sup></td>
+                    <td><a href="cyber5thlabs.html">LAB</a></td>
+                    <td>-</td>
+                </tr>
+            </tbody>
             <tfoot>
                 <tr>
-                    <td>1</td>
-                    <td>UNIT 1</td>
-                    <td><a href="/pdfjs/web/viewer.html?file=/srm1.pdf">UNIT 1</a></td>
+                    <td>6<sup>th</sup></td>
+                    <td><a href="cyber6thlabs.html">LAB</a></td>
+                    <td><a href="cyber6thnotes.html">NOTES</a></td>
+                    <!-- <td><a href="/pdfjs/web/viewer.html?file=/srm1.pdf">UNIT 1</a></td> -->
                 </tr>
             </tfoot>
         </table>
     </center>
+
     <script>
 
-        let countdownInterval; // Variable to hold the countdown interval
+        // let countdownInterval; // Variable to hold the countdown interval
 
-        // Function to check if the session is valid
-        function checkSession() {
-            const userName = localStorage.getItem('userName');
-            const sessionExpiry = localStorage.getItem('sessionExpiry');
+        // // Function to check if the session is valid
+        // function checkSession() {
+        //     const userName = localStorage.getItem('userName');
+        //     const sessionExpiry = localStorage.getItem('sessionExpiry');
 
-            // If session exists
-            if (userName && sessionExpiry) {
-                // Check if the session has expired
-                if (Date.now() > sessionExpiry) {
-                    console.log('Session expired. Redirecting to login.');
-                    clearSession();
-                    return false; // Session is not valid
-                } else {
-                    console.log('Session is valid for user:', userName);
-                    return true; // Session is valid
-                }
-            }
-            console.log('No session found. Redirecting to login.');
-            return false; // No session found
-        }
+        //     // If session exists
+        //     if (userName && sessionExpiry) {
+        //         // Check if the session has expired
+        //         if (Date.now() > sessionExpiry) {
+        //             console.log('Session expired. Redirecting to login.');
+        //             clearSession();
+        //             return false; // Session is not valid
+        //         } else {
+        //             console.log('Session is valid for user:', userName);
+        //             return true; // Session is valid
+        //         }
+        //     }
+        //     console.log('No session found. Redirecting to login.');
+        //     return false; // No session found
+        // }
 
-        // Function to clear session data
-        function clearSession() {
-            localStorage.removeItem('userName');
-            localStorage.removeItem('sessionExpiry');
-            location.href = "index.html"; // Redirect to the login page
-        }
+        // // Function to clear session data
+        // function clearSession() {
+        //     localStorage.removeItem('userName');
+        //     localStorage.removeItem('sessionExpiry');
+        //     location.href = "index.html"; // Redirect to the login page
+        // }
 
-        // Function to display the welcome message
-        function displayWelcomeMessage() {
-            const userName = localStorage.getItem('userName');
-            console.log('Welcome, ' + userName);
-            // if (userName) {
-            //     document.getElementById('welcome-message').textContent = "Welcome, " + userName + "!";
-            // }
-        }
+        // // Function to display the welcome message
+        // function displayWelcomeMessage() {
+        //     const userName = localStorage.getItem('userName');
+        //     console.log('Welcome, ' + userName);
+        //     // if (userName) {
+        //     //     document.getElementById('welcome-message').textContent = "Welcome, " + userName + "!";
+        //     // }
+        // }
 
-        // Function to start the countdown timer
-        function startCountdown() {
-            const sessionExpiry = localStorage.getItem('sessionExpiry');
+        // // Function to start the countdown timer
+        // function startCountdown() {
+        //     const sessionExpiry = localStorage.getItem('sessionExpiry');
 
-            // Update the timer every second
-            countdownInterval = setInterval(() => {
-                let remainingTime = sessionExpiry - Date.now(); // Calculate remaining time
-                // remainingTime -= 1000; // Decrease by 1 second
+        //     // Update the timer every second
+        //     countdownInterval = setInterval(() => {
+        //         let remainingTime = sessionExpiry - Date.now(); // Calculate remaining time
+        //         // remainingTime -= 1000; // Decrease by 1 second
 
-                if (remainingTime <= 0) {
-                    clearInterval(countdownInterval); // Clear the interval
-                    clearSession(); // Redirect if the time is up
-                } else {
-                    const seconds = Math.floor((remainingTime / 1000) % 60);
-                    const minutes = Math.floor((remainingTime / 1000 / 60) % 60);
-                    const hours = Math.floor((remainingTime / 1000 / 3600) % 24);
-                    const formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-                    document.getElementById('timer').textContent = `Your session will expire in: ${formattedTime}`;
-                }
-            }, 1000); // Update every second
-        }
+        //         if (remainingTime <= 0) {
+        //             clearInterval(countdownInterval); // Clear the interval
+        //             clearSession(); // Redirect if the time is up
+        //         } else {
+        //             const seconds = Math.floor((remainingTime / 1000) % 60);
+        //             const minutes = Math.floor((remainingTime / 1000 / 60) % 60);
+        //             const hours = Math.floor((remainingTime / 1000 / 3600) % 24);
+        //             const formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        //             document.getElementById('timer').textContent = `Your session will expire in: ${formattedTime}`;
+        //         }
+        //     }, 1000); // Update every second
+        // }
 
         // Check the session immediately on page load
         window.onload = function () {

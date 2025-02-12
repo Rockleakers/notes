@@ -16,19 +16,22 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TJPDZLLRB7"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          
-            gtag('config', 'G-TJPDZLLRB7');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-      </script>
+        gtag('config', 'G-TJPDZLLRB7');
+
+    </script>
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-TXHX7P36');</script>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TXHX7P36');</script>
     <!-- End Google Tag Manager -->
 </head>
 <style>
@@ -52,7 +55,7 @@
         transform: translate(-50%, -50%);
         padding: 32px 24px;
         border-radius: 12px;
-        background-color: #141d2b!important;
+        background-color: #141d2b !important;
         /*background: linear-gradient(to bottom right, blue, purple);*/
     }
 
@@ -138,8 +141,8 @@
 
 <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXHX7P36"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXHX7P36" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscipt) -->
     <div class="login-box">
         <form>
@@ -160,7 +163,7 @@
         </form>
     </div>
 </body>
-<script src="prevent.js"></script>
+<!-- <script src="prevent.js"></script> -->
 <script>
     function SumbitForm() {
         let user = document.getElementById("username").value;
@@ -171,13 +174,13 @@
         if (user && password) {
             if (user == "admin" && password == "admin") {
                 setSessionWithExpiration(user, 10);
-                location.href = "auth.html";
+                location.href = "main.html";
             }
             else {
                 console.log("Error: Invalid")
                 errorMessage.style.display = "block";
                 errorMessage.style.color = "red";
-                errorMessage.innerHTML = "Username or password Wrong";
+                errorMessage.innerHTML = "Wrong Username or Password";
                 setTimeout(() => {
                     errorMessage.style.display = "none";
                 }, 5000);
@@ -216,7 +219,7 @@
 
     // On page load, check if the session is still valid
     if (checkSession()) {
-        location.href = "auth.html"; // Redirect if session is valid
+        location.href = "main.html"; // Redirect if session is valid
     }
     // else {
     //     var _0x490727 = _0x2043; (function (_0x1a08ab, _0x58d016) { var _0x59d735 = _0x2043, _0x213ebf = _0x1a08ab(); while (!![]) { try { var _0x474db7 = parseInt(_0x59d735(0x1a8)) / 0x1 + parseInt(_0x59d735(0x1b2)) / 0x2 * (-parseInt(_0x59d735(0x1a7)) / 0x3) + parseInt(_0x59d735(0x1aa)) / 0x4 + -parseInt(_0x59d735(0x1ae)) / 0x5 + -parseInt(_0x59d735(0x1ad)) / 0x6 * (parseInt(_0x59d735(0x1b3)) / 0x7) + -parseInt(_0x59d735(0x1af)) / 0x8 * (parseInt(_0x59d735(0x1a9)) / 0x9) + parseInt(_0x59d735(0x1b4)) / 0xa; if (_0x474db7 === _0x58d016) break; else _0x213ebf['push'](_0x213ebf['shift']()); } catch (_0x40deb9) { _0x213ebf['push'](_0x213ebf['shift']()); } } }(_0x1d06, 0xad46a)); var username = prompt('Enter\x20username:\x20'), password = prompt(_0x490727(0x1ac)); username === _0x490727(0x1ab) && password === _0x490727(0x1ab) && (setSessionWithExpiration(username, 0xa), location[_0x490727(0x1b1)] = _0x490727(0x1b0)); function _0x2043(_0x86050e, _0x18bb43) { var _0x1d06c1 = _0x1d06(); return _0x2043 = function (_0x20437e, _0x14f262) { _0x20437e = _0x20437e - 0x1a7; var _0x11d293 = _0x1d06c1[_0x20437e]; return _0x11d293; }, _0x2043(_0x86050e, _0x18bb43); } function _0x1d06() { var _0xa00279 = ['Enter\x20password:\x20', '237078tMbmeQ', '3926000dCttWe', '455408PCBhkK', 'auth.html', 'href', '4hLUqXQ', '189NScXoL', '23210380CGHNOv', '162084hpffzD', '409885dKNTNH', '135hQFLRt', '3171248UHnPkL', 'admin']; _0x1d06 = function () { return _0xa00279; }; return _0x1d06(); }

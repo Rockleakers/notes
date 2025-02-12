@@ -1,4 +1,5 @@
 User-agent: Googlebot
+Allow: /
 Disallow: /nogooglebot/
 Disallow: /jp/
 Disallow: /nc/

@@ -2,18 +2,19 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="style.css">
     <!-- <meta charset="UTF-8"> -->
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TJPDZLLRB7"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          
-            gtag('config', 'G-TJPDZLLRB7');
-            </script>
-    <title>Document</title>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-TJPDZLLRB7');
+    </script>
+    <title>Java Programming | Network and Communication</title>
 
     <script>
         function redirectTo(url) {
@@ -21,59 +22,15 @@
         }
     </script>
 </head>
-<style>
-    #timer {
-        font-weight: bold;
-        color: #000;
-    }
-
-    table,
-    th,
-    td {
-        border: 1px solid #fff;
-        border-collapse: collapse;
-        text-align: center;
-    }
-
-    table {
-        background: linear-gradient(rgba(4, 9, 30, 0.7),
-                rgba(4, 9, 30, 0.7)),
-            url('./image/java-bg.png');
-        background-size: contain;
-        background-position: center center;
-        background-repeat: no-repeat;
-    }
-
-    th {
-        background-color: black;
-        color: white;
-    }
-
-    td {
-        color: #fff;
-        /* background-color: rgba(211, 111, 33, .3 ); */
-    }
-
-    td:hover {
-        background-color: #f00;
-    }
-
-    a {
-        color: #fff;
-    }
-
-    tfoot {
-        background-color: #062244;
-    }
-</style>
 
 <body>
     <!-- <h1 id="welcome-message">Authenticated Page</h1> -->
     <!-- <p>Only logged-in users should see this content.</p> -->
     <p id="timer">Your session will expire in: 00:00:00</p> <!-- Timer display -->
-    <button onclick="logout()">Logout</button>
-    <button><a href="main.html" style="color: #000;text-decoration: none;">Main page</a></button>
-    <table width="100%">
+    <div class="btn btn-green-filled" onclick="logout()">Logout</div>
+    <div style="display: inline-block;"><a href="main.html" class="btn btn-grey-filled"
+            style="color: #000;text-decoration: none;">Main page</a></div>
+    <table width="100%" cellspacing="0" cellpadding="0">
         <caption>Java Programming</caption>
         <thead>
             <tr>
@@ -246,7 +203,7 @@
         </tfoot>
     </table>
 
-    <table width="100%">
+    <table width="100%" cellspacing="0" cellpadding="0">
         <caption>Network and Communication</caption>
         <thead>
             <tr>
