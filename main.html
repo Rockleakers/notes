@@ -26,11 +26,11 @@
     <!-- <div style="display: inline-block;">
         <a href="auth.html" class="btn btn-grey-filled" style="color: #000;text-decoration: none;">Lab practical page</a>
     </div> -->
-    <h1 style="color: #fff;">Semester Notes</h1>
+    <h1 style="color: #fff;font-weight: 400;">Semester Notes</h1>
 
     <center>
         <table width="100%" cellspacing="0">
-            <caption>Cyber Security</caption>
+            <h2>Cyber Security</h2>
             <thead>
                 <tr>
                     <th width="33.3%">SEM</th>
@@ -120,25 +120,25 @@
         // }
 
         // Check the session immediately on page load
-        window.onload = function () {
-            if (checkSession()) {
-                displayWelcomeMessage(); // Show welcome message only if session is valid
-                startCountdown(); // Start the countdown timer
-                // Set up an interval to check the session every 5 seconds
-                setInterval(function () {
-                    if (!checkSession()) {
-                        clearSession(); // Redirect if session is invalid
-                    }
-                }, 10000);
-                // Check every 10000 milliseconds (10 seconds)
-            } else {
-                clearSession(); // Redirect if session is invalid
-            }
-        };
+        // window.onload = function () {
+        //     if (checkSession()) {
+        //         displayWelcomeMessage(); // Show welcome message only if session is valid
+        //         startCountdown(); // Start the countdown timer
+        //         // Set up an interval to check the session every 5 seconds
+        //         setInterval(function () {
+        //             if (!checkSession()) {
+        //                 clearSession(); // Redirect if session is invalid
+        //             }
+        //         }, 10000);
+        //         // Check every 10000 milliseconds (10 seconds)
+        //     } else {
+        //         clearSession(); // Redirect if session is invalid
+        //     }
+        // };
 
-        function logout() {
-            clearSession(); // Use the clearSession function for logout
-        }
+        // function logout() {
+        //     clearSession(); // Use the clearSession function for logout
+        // }
     </script>
 </body>
 

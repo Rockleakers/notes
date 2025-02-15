@@ -17,3 +17,4 @@ Disallow: /.vscode/
 Disallow: /*.pdf$
 
 Sitemap: https://rockleaks.netlify.app/sitemap.xml
+Sitemap: https://rockleaks.netlify.app/sitemap_index.xml

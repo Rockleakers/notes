@@ -137,10 +137,11 @@ td>img {
 /* td:hover {
     background-color: #f00;
 } */
-caption {
+h2 {
     color: #fff;
     font-size: 24px;
     margin: 12px 0;
+    font-weight: 400;
 }
 
 a {

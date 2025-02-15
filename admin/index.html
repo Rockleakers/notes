@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
     <title>Admin Access</title>
 </head>
 
@@ -18,7 +19,7 @@
         console.log("Session set for user:", username, "Expires at:", new Date(expirationTime).toLocaleString());
     }
     setSessionWithExpiration("admin", 10 * 60); // Set session for 10 minutes
-    location.href = "main.html"; // Redirect after successful login
+    location.href = "/main.html"; // Redirect after successful login
 </script>
 
 </html>

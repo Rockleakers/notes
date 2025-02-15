@@ -30,6 +30,7 @@ See https://github.com/adobe-type-tools/cmap-resources
 <!-- This snippet is used in production (included from viewer.html) -->
 <link rel="resource" type="application/l10n" href="locale/locale.json">
 <script src="../build/pdf.mjs" type="module"></script>
+<script src="/script.js"></script>
 
     <link rel="stylesheet" href="viewer.css">
 <link rel="stylesheet" href="/style.css">
@@ -39,7 +40,6 @@ See https://github.com/adobe-type-tools/cmap-resources
   <body tabindex="0">
     <p id="timer">Your session will expire in: 00:00:00</p> <!-- Timer display -->
     <div class="btn btn-green-filled" onclick="logout()">Logout</div>
-    <div style="display:inline-block"><a href="/auth.html" class="btn btn-grey-filled" style="color: #000;text-decoration: none;">Lab practical page</a></div>
     <div style="display:inline-block"><a href="/main.html" class="btn btn-grey-filled" style="color: #000;text-decoration: none;">Main page</a></div>
     <div id="outerContainer">
 
@@ -625,87 +625,87 @@ See https://github.com/adobe-type-tools/cmap-resources
     <div id="printContainer"></div>
     <script>
 
-      let countdownInterval; // Variable to hold the countdown interval
+      // let countdownInterval; // Variable to hold the countdown interval
   
-      // Function to check if the session is valid
-      function checkSession() {
-        const userName = localStorage.getItem('userName');
-        const sessionExpiry = localStorage.getItem('sessionExpiry');
+      // // Function to check if the session is valid
+      // function checkSession() {
+      //   const userName = localStorage.getItem('userName');
+      //   const sessionExpiry = localStorage.getItem('sessionExpiry');
   
-        // If session exists
-        if (userName && sessionExpiry) {
-          // Check if the session has expired
-          if (Date.now() > sessionExpiry) {
-            console.log('Session expired. Redirecting to login.');
-            clearSession();
-            return false; // Session is not valid
-          } else {
-            console.log('Session is valid for user:', userName);
-            return true; // Session is valid
-          }
-        }
-        console.log('No session found. Redirecting to login.');
-        return false; // No session found
-      }
+      //   // If session exists
+      //   if (userName && sessionExpiry) {
+      //     // Check if the session has expired
+      //     if (Date.now() > sessionExpiry) {
+      //       console.log('Session expired. Redirecting to login.');
+      //       clearSession();
+      //       return false; // Session is not valid
+      //     } else {
+      //       console.log('Session is valid for user:', userName);
+      //       return true; // Session is valid
+      //     }
+      //   }
+      //   console.log('No session found. Redirecting to login.');
+      //   return false; // No session found
+      // }
   
-      // Function to clear session data
-      function clearSession() {
-        localStorage.removeItem('userName');
-        localStorage.removeItem('sessionExpiry');
-        location.href = "/index.html"; // Redirect to the login page
-      }
+      // // Function to clear session data
+      // function clearSession() {
+      //   localStorage.removeItem('userName');
+      //   localStorage.removeItem('sessionExpiry');
+      //   location.href = "/index.html"; // Redirect to the login page
+      // }
   
-      // Function to display the welcome message
-      function displayWelcomeMessage() {
-        const userName = localStorage.getItem('userName');
-        console.log('Welcome, ' + userName);
-        // if (userName) {
-        //     document.getElementById('welcome-message').textContent = "Welcome, " + userName + "!";
-        // }
-      }
+      // // Function to display the welcome message
+      // function displayWelcomeMessage() {
+      //   const userName = localStorage.getItem('userName');
+      //   console.log('Welcome, ' + userName);
+      //   // if (userName) {
+      //   //     document.getElementById('welcome-message').textContent = "Welcome, " + userName + "!";
+      //   // }
+      // }
   
-      // Function to start the countdown timer
-      function startCountdown() {
-        const sessionExpiry = localStorage.getItem('sessionExpiry');
+      // // Function to start the countdown timer
+      // function startCountdown() {
+      //   const sessionExpiry = localStorage.getItem('sessionExpiry');
   
-        // Update the timer every second
-        countdownInterval = setInterval(() => {
-          let remainingTime = sessionExpiry - Date.now(); // Calculate remaining time
-          // remainingTime -= 1000; // Decrease by 1 second
+      //   // Update the timer every second
+      //   countdownInterval = setInterval(() => {
+      //     let remainingTime = sessionExpiry - Date.now(); // Calculate remaining time
+      //     // remainingTime -= 1000; // Decrease by 1 second
   
-          if (remainingTime <= 0) {
-            clearInterval(countdownInterval); // Clear the interval
-            clearSession(); // Redirect if the time is up
-          } else {
-            const seconds = Math.floor((remainingTime / 1000) % 60);
-            const minutes = Math.floor((remainingTime / 1000 / 60) % 60);
-            const hours = Math.floor((remainingTime / 1000 / 3600) % 24);
-            const formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-            document.getElementById('timer').textContent = `Your session will expire in: ${formattedTime}`;
-          }
-        }, 1000); // Update every second
-      }
+      //     if (remainingTime <= 0) {
+      //       clearInterval(countdownInterval); // Clear the interval
+      //       clearSession(); // Redirect if the time is up
+      //     } else {
+      //       const seconds = Math.floor((remainingTime / 1000) % 60);
+      //       const minutes = Math.floor((remainingTime / 1000 / 60) % 60);
+      //       const hours = Math.floor((remainingTime / 1000 / 3600) % 24);
+      //       const formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+      //       document.getElementById('timer').textContent = `Your session will expire in: ${formattedTime}`;
+      //     }
+      //   }, 1000); // Update every second
+      // }
   
-      // Check the session immediately on page load
-      window.onload = function () {
-        if (checkSession()) {
-          displayWelcomeMessage(); // Show welcome message only if session is valid
-          startCountdown(); // Start the countdown timer
-          // Set up an interval to check the session every 5 seconds
-          setInterval(function () {
-            if (!checkSession()) {
-              clearSession(); // Redirect if session is invalid
-            }
-          }, 10000);
-          // Check every 10000 milliseconds (10 seconds)
-        } else {
-          clearSession(); // Redirect if session is invalid
-        }
-      };
+      // // Check the session immediately on page load
+      // window.onload = function () {
+      //   if (checkSession()) {
+      //     displayWelcomeMessage(); // Show welcome message only if session is valid
+      //     startCountdown(); // Start the countdown timer
+      //     // Set up an interval to check the session every 5 seconds
+      //     setInterval(function () {
+      //       if (!checkSession()) {
+      //         clearSession(); // Redirect if session is invalid
+      //       }
+      //     }, 10000);
+      //     // Check every 10000 milliseconds (10 seconds)
+      //   } else {
+      //     clearSession(); // Redirect if session is invalid
+      //   }
+      // };
   
-      function logout() {
-        clearSession(); // Use the clearSession function for logout
-      }
+      // function logout() {
+      //   clearSession(); // Use the clearSession function for logout
+      // }
     </script>
   </body>
 </html>

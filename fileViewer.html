@@ -275,23 +275,23 @@
                 });
         }
 
-        window.onload = function () {
-            if (checkSession()) {
-                startCountdown();
-                loadFile();
-                setInterval(function () {
-                    if (!checkSession()) {
-                        clearSession();
-                    }
-                }, 10000);
-            } else {
-                clearSession();
-            }
-        };
+        // window.onload = function () {
+        //     if (checkSession()) {
+        //         startCountdown();
+        //         loadFile();
+        //         setInterval(function () {
+        //             if (!checkSession()) {
+        //                 clearSession();
+        //             }
+        //         }, 10000);
+        //     } else {
+        //         clearSession();
+        //     }
+        // };
 
-        function logout() {
-            clearSession();
-        }
+        // function logout() {
+        //     clearSession();
+        // }
     </script>
 </body>
 
