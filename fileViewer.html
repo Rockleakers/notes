@@ -176,7 +176,15 @@
         }
 
         function downloadFile() {
-            
+            const urlParams = new URLSearchParams(window.location.search);
+            const file = urlParams.get('file');
+
+            let link = document.createElement('a');
+            link.download = file.split('/').pop();
+            link.href = file;
+            link.click();
+
+            // window.open(`${file}`, '_self');
         }
 
         function loadPDF(url) {
