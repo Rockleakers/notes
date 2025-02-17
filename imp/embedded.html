@@ -1,102 +1,89 @@
 <html>
-
 <head>
-    <title>fee structure</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            overflow-x: auto;
-        }
+<title>fee structure</title>
+<style>
+table {
+width: 100%;
+border-collapse: collapse;
+margin: 20px 0;
+overflow-x: auto;
+}
+th, td {
+border: 1px solid rgb(225, 17, 222);
+padding: 10px;
+text-align: left;
+}
 
-        th,
-        td {
-            border: 1px solid rgb(225, 17, 222);
-            padding: 10px;
-            text-align: left;
-        }
+th {
+background-color: rgb(225, 17, 222);
+color: white;
+font-weight: bold;
+position: sticky;
+top: 0;
+z-index: 1;
+}
 
-        /* Header Styling */
-        th {
-            background-color: rgb(225, 17, 222);
-            color: white;
-            font-weight: bold;
-            position: sticky;
-            top: 0;
-            z-index: 1;
-        }
+tr:hover {
+background-color: rgba(225, 17, 222, 0.1);
+}
 
-        /* Row Hover Effect */
-        tr:hover {
-            background-color: rgba(225, 17, 222, 0.1);
-        }
+tr:nth-child(even) {
+background-color: rgba(225, 17, 222, 0.05);
+}
 
-        /* Striped Rows */
-        tr:nth-child(even) {
-            background-color: rgba(225, 17, 222, 0.05);
-        }
+@media (max-width: 768px) {
+table {
+display: block;
+overflow-x: auto;
+white-space: nowrap;
+}
+th, td {
+display: inline-block;
+min-width: 120px;
+}
+}
 
-        /* Responsive Table */
-        @media (max-width: 768px) {
-            table {
-                display: block;
-                overflow-x: auto;
-                white-space: nowrap;
-            }
-
-            th,
-            td {
-                display: inline-block;
-                min-width: 120px;
-            }
-        }
-
-        /* Border Radius */
-        table,
-        th,
-        td {
-            border-radius: 5px;
-        }
-    </style>
+table,
+th,
+td {
+border-radius: 5px;
+}
+</style>
 </head>
-
 <body>
-    <ol class="lroman">
-        <h1>
-            <li>fee structure</li>
-        </h1>
-        <br />
-        <table style="width:50%">
-            <tr>
-                <th>serial no</th>
-                <th>course </th>
-                <th>tuition fee</th>
-            </tr>
-            <tr>
-                <td>1.</td>
-                <td>B.Tech-Aerospace</td>
-                <td>Rs. 300000 PA</td>
-            </tr>
-            <tr>
-                <td>2.</td>
-                <td>B.Tech-Aeronautical</td>
-                <td>Rs. 300000 PA</td>
-            </tr>
-            <tr>
-                <td>3.</td>
-                <td>B.Tech Automobile</td>
-                <td>Rs. 250000 PA</td>
-            </tr>
-            <tr>
-                <td>4.</td>
-                <td>B.Tech Bio Medical</td>
-                <td>Rs. 250000 PA</td>
-            </tr>
-
-        </table>
-        </h3>
-    </ol>
+<ol class="lroman">
+<h1>
+<li>fee structure</li>
+</h1>
+<br />
+<table style="width:50%">
+<tr>
+<th>serial no</th>
+<th>course </th>
+<th>tuition fee</th>
+</tr>
+<tr>
+<td>1.</td>
+<td>B.Tech-Aerospace</td>
+<td>Rs. 300000 PA</td>
+</tr>
+<tr>
+<td>2.</td>
+<td>B.Tech-Aeronautical</td>
+<td>Rs. 300000 PA</td>
+</tr>
+<tr>
+<td>3.</td>
+<td>B.Tech Automobile</td>
+<td>Rs. 250000 PA</td>
+</tr>
+<tr>
+<td>4.</td>
+<td>B.Tech Bio Medical</td>
+<td>Rs. 250000 PA</td>
+</tr>
+</table>
+</h3>
+</ol>
 </body>
-
 </html>
